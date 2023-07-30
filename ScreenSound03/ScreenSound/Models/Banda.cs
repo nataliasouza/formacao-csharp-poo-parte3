@@ -1,14 +1,11 @@
-﻿namespace ScreenSound.Models;
+﻿using ScreenSound.Models.Interfaces;
 
-internal class Banda
+namespace ScreenSound.Models;
+
+internal class Banda : IAvaliacao
 {
     private List<Album> albuns = new List<Album>();
-    private List<Avaliacao> notas = new List<Avaliacao>();
-
-    public Banda(string nome)
-    {
-        Nome = nome;
-    }
+    private List<Avaliacao> notas = new List<Avaliacao>();   
 
     public string Nome { get; }
     public double Media 
@@ -20,6 +17,11 @@ internal class Banda
         }
     }
     public List<Album> Albuns => albuns;
+
+    public Banda(string nome)
+    {
+        Nome = nome;
+    }
 
     public void AdicionarAlbum(Album album) 
     { 
@@ -36,7 +38,7 @@ internal class Banda
         Console.WriteLine($"Discografia da banda {Nome}");
         foreach (Album album in albuns)
         {
-            Console.WriteLine($"Álbum: {album.Nome} ({album.DuracaoTotal})");
+            Console.WriteLine($"Álbum: {album.Nome} (Duração: {album.DuracaoTotal})");
         }
     }
 }

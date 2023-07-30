@@ -17,6 +17,4 @@ internal class Avaliacao
         int nota = int.Parse(texto);    
         return new Avaliacao(nota);
     }
-
-
 }
