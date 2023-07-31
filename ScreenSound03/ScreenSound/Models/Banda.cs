@@ -1,4 +1,5 @@
-﻿using ScreenSound.Models.Interfaces;
+﻿using OpenAI_API;
+using ScreenSound.Models.Interfaces;
 
 namespace ScreenSound.Models;
 
@@ -8,6 +9,7 @@ internal class Banda : IAvaliacao
     private List<Avaliacao> notas = new List<Avaliacao>();   
 
     public string Nome { get; }
+    public string? Resumo { get; set; }
     public double Media 
     {
         get
@@ -16,7 +18,7 @@ internal class Banda : IAvaliacao
             else return notas.Average(a => a.Nota);
         }
     }
-    public List<Album> Albuns => albuns;
+    public IEnumerable<Album> Albuns => albuns;
 
     public Banda(string nome)
     {
@@ -42,4 +44,13 @@ internal class Banda : IAvaliacao
             album.ExibirMusicasDoAlbum();
         }
     }
+
+    public void ExibirResumo(string nomeBanda)
+    {
+        var client = new OpenAIAPI("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");
+        var chat = client.Chat.CreateConversation();
+        chat.AppendSystemMessage($"Resuma a banda {nomeBanda} em 1 parágrafo. Adote um estilo informal.");
+        string resposta = chat.GetResponseFromChatbotAsync().GetAwaiter().GetResult();
+        Resumo = resposta;
+    } 
 }

@@ -44,7 +44,7 @@ internal class Album : IAvaliacao
         Console.WriteLine($"\nPara ouvir este álbum inteiro você precisa de {DuracaoTotal}.\n");
     }
 
-    public static void ExibirMediaDoAlbum(Dictionary<string, Banda> bandasRegistradas)
+    public static void ExibirDadosDoAlbum(Dictionary<string, Banda> bandasRegistradas)
     {
         Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
         string nomeDaBanda = Console.ReadLine()!;
@@ -52,6 +52,8 @@ internal class Album : IAvaliacao
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {
             Banda banda = bandasRegistradas[nomeDaBanda];
+            banda.ExibirResumo(nomeDaBanda);
+            Console.WriteLine($"\n{banda.Resumo}");
             Console.WriteLine($"\nA média da banda {nomeDaBanda} é {banda.Media}.\n");
             banda.ExibirDiscografia();
             foreach (Album album in banda.Albuns)

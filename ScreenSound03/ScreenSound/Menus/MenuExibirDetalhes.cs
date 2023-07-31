@@ -9,6 +9,6 @@ internal class MenuExibirDetalhes : Menu
     {
         base.Executar(bandasRegistradas);
         ExibirTituloDaOpcao("Exibir detalhes da banda");
-        Album.ExibirMediaDoAlbum(bandasRegistradas);      
+        Album.ExibirDadosDoAlbum(bandasRegistradas);      
     }
 }

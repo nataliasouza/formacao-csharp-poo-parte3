@@ -1,5 +1,6 @@
 ﻿using ScreenSound.Menus;
 using ScreenSound.Models;
+using OpenAI_API;
 
 #region "Bandas, Albúns e Musicas"
 
