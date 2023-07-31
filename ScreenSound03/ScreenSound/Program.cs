@@ -1,16 +1,65 @@
 ﻿using ScreenSound.Menus;
 using ScreenSound.Models;
 
-Banda ira = new Banda ("Ira");
-ira.AdicionarNota(new Avaliacao(9));
-ira.AdicionarNota(new Avaliacao(7));
-ira.AdicionarNota(new Avaliacao(9));
+#region "Bandas, Albúns e Musicas"
 
-Banda u2 = new Banda ("U2");
+Banda bandaGunsNRoses = new Banda("Guns in Roses");
+Album albumDoGunsInRoses = new Album("Use your ilusion I");
+
+Musica musicaNovemberRain = new Musica(bandaGunsNRoses, "November Rain")
+{
+    Duracao = 538,
+    Disponivel = true,
+};
+
+Musica musicaLiveAndLetDie = new Musica(bandaGunsNRoses, "Live and Let Die")
+{
+    Duracao = 184,
+    Disponivel = false,
+};
+
+
+bandaGunsNRoses.AdicionarAlbum(albumDoGunsInRoses);
+albumDoGunsInRoses.AdicionarMusica(musicaNovemberRain);
+albumDoGunsInRoses.AdicionarMusica(musicaLiveAndLetDie);
+
+bandaGunsNRoses.AdicionarNota(new Avaliacao(10));
+bandaGunsNRoses.AdicionarNota(new Avaliacao(8));
+bandaGunsNRoses.AdicionarNota(new Avaliacao(9));
+
+albumDoGunsInRoses.AdicionarNota(new Avaliacao(7));
+albumDoGunsInRoses.AdicionarNota(new Avaliacao(9));
+
+Banda bandaU2 = new Banda ("U2");
+Album albumU2 = new Album("All That You Can't Leave Behind");
+
+Musica musicaElevation = new Musica(bandaU2, "Elevation")
+{
+    Duracao = 421,
+    Disponivel = true,
+};
+
+Musica musicaBeautifulDay = new Musica(bandaU2, "Beautiful Day")
+{
+    Duracao = 398,
+    Disponivel = false,
+};
+
+bandaU2.AdicionarAlbum(albumU2);
+albumU2.AdicionarMusica(musicaBeautifulDay);
+albumU2.AdicionarMusica(musicaElevation);
+
+bandaU2.AdicionarNota(new Avaliacao(10));
+bandaU2.AdicionarNota(new Avaliacao(7));
+bandaU2.AdicionarNota(new Avaliacao(7));
+
+albumU2.AdicionarNota(new Avaliacao(8));
+
+#endregion 
 
 Dictionary<string, Banda> bandasRegistradas = new();
-bandasRegistradas.Add(ira.Nome, ira);
-bandasRegistradas.Add(u2.Nome, u2);
+bandasRegistradas.Add(bandaGunsNRoses.Nome, bandaGunsNRoses);
+bandasRegistradas.Add(bandaU2.Nome, bandaU2);
 
 Dictionary<int, Menu> opcoesMenu = new();
 opcoesMenu.Add(1, new MenuRegistrarBanda());

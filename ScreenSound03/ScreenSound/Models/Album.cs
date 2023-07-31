@@ -36,11 +36,39 @@ internal class Album : IAvaliacao
 
     public void ExibirMusicasDoAlbum()
     {
-        Console.WriteLine($"Lista de músicas do álbum {Nome}:\n");
+        Console.WriteLine($"\n\tLista de músicas do álbum {Nome}:\n");
         foreach (var musica in musicas)
         {
-            Console.WriteLine($"Música: {musica.Nome}");
+            Console.WriteLine($"\tMúsica: {musica.Nome}");
         }
-        Console.WriteLine($"\nPara ouvir este álbum inteiro você precisa de {DuracaoTotal}");
+        Console.WriteLine($"\nPara ouvir este álbum inteiro você precisa de {DuracaoTotal}.\n");
+    }
+
+    public static void ExibirMediaDoAlbum(Dictionary<string, Banda> bandasRegistradas)
+    {
+        Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
+        string nomeDaBanda = Console.ReadLine()!;
+
+        if (bandasRegistradas.ContainsKey(nomeDaBanda))
+        {
+            Banda banda = bandasRegistradas[nomeDaBanda];
+            Console.WriteLine($"\nA média da banda {nomeDaBanda} é {banda.Media}.\n");
+            banda.ExibirDiscografia();
+            foreach (Album album in banda.Albuns)
+            {
+                Console.WriteLine($"Albúm Nome: {album.Nome} - Avaliação: {album.Media}");                
+            }
+
+            Console.Write("\nDigite uma tecla para votar ao menu principal");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
+            Console.Write("Digite uma tecla para voltar ao menu principal");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }

@@ -36,9 +36,10 @@ internal class Banda : IAvaliacao
     public void ExibirDiscografia()
     {
         Console.WriteLine($"Discografia da banda {Nome}");
-        foreach (Album album in albuns)
+        foreach (Album album in Albuns)
         {
             Console.WriteLine($"Álbum: {album.Nome} (Duração: {album.DuracaoTotal})");
+            album.ExibirMusicasDoAlbum();
         }
     }
 }
