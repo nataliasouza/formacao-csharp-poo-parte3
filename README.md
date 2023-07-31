@@ -1,7 +1,7 @@
 # Aprendendo a programar em C# com Orientação a Objetos - Alura | Módulo 03/04
 
 <img src="https://img.shields.io/static/v1?label=Formação CSharp-POO&message=ALURA&color=115EBC&style=for-the-badge"/>
-:spiral_calendar: Atualizado em 22 de julho de 2023.
+:spiral_calendar: Atualizado em 30 de julho de 2023.
 
 ⚠️ Módulo 1 e 2 estão concluídos. ⚠️
 
