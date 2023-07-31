@@ -5,6 +5,8 @@
 
 ⚠️ Módulos 1, 2 e 3 estão concluídos. ⚠️ 
 
+🚧 O módulo 4 está em desenvolvimento. 🚧 <br>
+
 ##### DESCRIÇÃO:
 > Formação C# - Nesta formação você vai aprender o necessário para iniciar o desenvolvimento de aplicações usando C# e terá acesso a tudo o que precisa para dominar desde os fundamentos da linguagem C# até as melhores práticas de codificação e modelagem, utilizando o poderoso paradigma da programação orientada a objetos.
 
@@ -95,6 +97,20 @@ https://platform.openai.com/account/api-keys
 <br>
 
 </details>
+
+<br>
+
+## Módulo 4 
+### Consumindo API, gravando arquivos e utilizando o LINQ - 8 Horas [Em andamento]
+```bash
+https://cursos.alura.com.br/course/c-sharp-consumindo-api-gravando-arquivos-linq
+```
+*Repositório Módulo 4 - Branch master*
+
+```bash
+https://github.com/nataliasouza/formacao-csharp-poo-parte4
+```
+<br>
 
 ----
 
