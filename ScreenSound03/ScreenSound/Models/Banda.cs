@@ -47,7 +47,9 @@ internal class Banda : IAvaliacao
 
     public void ExibirResumo(string nomeBanda)
     {
-        var client = new OpenAIAPI("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");
+        //gere uma chave em https://platform.openai.com/account/api-keys
+       
+        var client = new OpenAIAPI("coleSuaChaveAqui");
         var chat = client.Chat.CreateConversation();
         chat.AppendSystemMessage($"Resuma a banda {nomeBanda} em 1 parágrafo. Adote um estilo informal.");
         string resposta = chat.GetResponseFromChatbotAsync().GetAwaiter().GetResult();
